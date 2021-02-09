@@ -6,7 +6,19 @@ terraform {
       version = ">= 2.26"
     }
   }
+
++ backend "remote" {
++   organization = "russkye"
++   workspaces {
++     name = "wks-terraform-azure"
++   }
++ }
 }
+
+provider "azurerm" {
+  features {}
+}
+
 
 provider "azurerm" {
   features {}
